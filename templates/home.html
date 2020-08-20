@@ -1,0 +1,9 @@
+{% load render_bundle from webpack_loader %}
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <div id="root"></div>
+    {% render_bundle 'vendor' %}
+    {% render_bundle 'main' %}
+</body>
+</html>

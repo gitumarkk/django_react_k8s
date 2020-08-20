@@ -1,0 +1,25 @@
+# python
+.git
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+.tox
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*,cover
+*.log
+
+# custom
+*Dockerfile*
+**/node_modules
+collectstatic
+static
+!static/build/webpack-stats.json
+# env rather serve env file as a kubernetes configmap or secret
