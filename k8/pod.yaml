@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: django-react-k8s-pod
+  labels:
+    pod: django-react-k8s
+spec:
+  containers:
+  - name: django
+    image: gcr.io/<PROJECT_ID>/django_react_k8s:v1

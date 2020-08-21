@@ -3,10 +3,10 @@ import os
 from pathlib import Path
 
 def get_docker_image(tag, env):
-  return f'gcr.io/mbele-public/django_react_k8s:{tag}'
+  return f'gcr.io/<PROJECT_ID>/django_react_k8s:{tag}'
 
 def get_bucket(env):
-  return f'mbele-public-{env}'
+  return f'<BUCKET_PREFIX>-{env}'
 
 def build(tag, env):
   os.system('rm -rf static/build/*')
@@ -23,7 +23,7 @@ def deploy(tag, env):
 if __name__ == '__main__':
   parser = argparse.ArgumentParser()
   parser.add_argument('--tag', help='The docker tag to use', required=True)
-  parser.add_argument('--env', help='The docker tag to use', default='staging')
+  parser.add_argument('--env', help='The environment to deploy to', default='staging')
   args = parser.parse_args()
 
   build(args.tag, args.env)
